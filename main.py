@@ -127,3 +127,21 @@ if result == expected:
     print("PASS")
 else:
     print("FAIL")
+
+for key in data:
+    case = data[key]
+    s_cross = mac(case["input"], cross_filter)
+    s_x = mac(case["input"], x_filter)
+    expected = label_map[case["expected"]]
+
+    if s_cross > s_x:
+        result = "Cross"
+    elif s_cross < s_x:
+        result = "X"
+    else:
+        result = "UNDECIDED"
+
+    if result == expected:
+        print(key, "PASS")
+    else:
+        print(key, "FAIL")
