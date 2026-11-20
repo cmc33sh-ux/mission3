@@ -76,3 +76,54 @@ print(c)
 
 line = ("안녕하세요. ")
 print(line)
+
+d = {"name": "예시", "size": 3, "expected": "+"}
+
+print(d["name"])
+print(d["size"])
+print(d["expected"])
+
+
+case = {"input": [[0, 1, 0],
+                  [1, 1, 1],
+                  [0, 1, 0]],
+        "expected": "+"}
+
+print(case["expected"])
+print(case["input"])
+print(case["input"][1])
+print(case["input"][1][2])
+
+import json
+
+with open("data.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+print(data["case1"]["expected"])
+
+case1 = data["case1"]
+
+s_cross = mac(case1["input"], cross_filter)
+s_x = mac(case1["input"], x_filter)
+
+print(s_cross)
+print(s_x)
+
+label_map = {"+": "Cross", "x": "X"}
+
+expected = label_map[case1["expected"]]
+
+print(case1["expected"])
+print(expected)
+
+if s_cross > s_x:
+    result = "Cross"
+elif s_cross < s_x:
+    result = "X"
+else:
+    result = "UNDECIDED"
+
+if result == expected:
+    print("PASS")
+else:
+    print("FAIL")
