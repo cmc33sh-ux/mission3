@@ -96,7 +96,7 @@ print(case["input"][1][2])
 
 import json
 
-with open("data.json", "r", encoding="utf-8") as f:
+with open("sample.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 print(data["case1"]["expected"])
